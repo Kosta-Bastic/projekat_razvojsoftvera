@@ -1,0 +1,30 @@
+package com.project.model.dtos;
+
+import com.project.model.AttendsClass;
+import com.project.model.StudentIndex;
+import com.project.model.Subject;
+import lombok.Data;
+
+import java.util.List;
+
+/*
+ * objekat ove kalse sadrzi sve podatke o studentu koji
+ * se prikazuju u njegovom profilu  
+ * 
+ * - polozeni predmeti
+ * - tok studija (upisi, obnove godina)
+ * - predmete koje slusa
+ * - prijavljeni ispiti
+ * - uplate
+ * 
+ * - selektujemo preko indeksa, potrebno prikupiti podatke i o drugim indeksima
+ * 
+ */
+
+@Data
+public class StudentProfileDTO {
+
+	private StudentIndex index;
+	private List<AttendsClass> attendsClasses;
+	private List<Subject> remainingClasses;
+}
