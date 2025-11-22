@@ -1,4 +1,4 @@
-package com.project.model;
+package com.project.model.entities;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;

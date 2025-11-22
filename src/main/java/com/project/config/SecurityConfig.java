@@ -1,17 +1,23 @@
 package com.project.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration //Označava da je klasa konfiguraciona i da Spring treba da je učita pri pokretanju aplikacije.
-@EnableWebSecurity //Aktivira Spring Security i omogućava prilagođenu konfiguraciju bezbednosti.
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
-        //Kaže Spring Security-ju da dozvoli svaki zahtev (tj. bez autentikacije)
-        // i Isključuje CSRF zaštitu (Cross-Site Request Forgery).
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest().permitAll()
+                )
+                .csrf(csrf -> csrf.disable());
+
+        return http.build();
     }
 }

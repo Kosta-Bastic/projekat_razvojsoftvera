@@ -1,7 +1,7 @@
-package com.project.repositories;
+package com.project.repository;
 
-import com.project.model.StudyProgram;
-import com.project.model.Subject;
+import com.project.model.entities.StudyProgram;
+import com.project.model.entities.Subject;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

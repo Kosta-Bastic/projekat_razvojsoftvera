@@ -1,6 +1,6 @@
-package com.project;
+package com.project.seeder;
 
-import com.project.repositories.*;
+import com.project.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
