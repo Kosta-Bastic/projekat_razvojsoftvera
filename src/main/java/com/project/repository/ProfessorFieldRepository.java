@@ -1,6 +1,6 @@
-package com.project.repositories;
+package com.project.repository;
 
-import com.project.model.ProfessorField;
+import com.project.model.entities.ProfessorField;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

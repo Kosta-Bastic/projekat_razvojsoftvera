@@ -1,9 +1,8 @@
-package com.project.model;
+package com.project.model.entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
-
-import javax.persistence.*;
 
 @Entity
 @Data
@@ -19,7 +18,7 @@ public class Subject {
 	private String description;
 	private Integer espb;
 	@ManyToOne
-	private StudijskiProgram studProgram;
+	private StudyProgram studProgram;
 	private boolean mandatory;
 
 	@Override

@@ -1,8 +1,8 @@
-package com.project.model;
+package com.project.model.entities;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Data

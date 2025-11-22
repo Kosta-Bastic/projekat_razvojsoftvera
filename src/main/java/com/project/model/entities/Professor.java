@@ -1,8 +1,8 @@
-package com.project.model;
+package com.project.model.entities;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -20,7 +20,7 @@ public class Professor {
 	 private String phoneNumber;
 	 private String address;
 	 @OneToMany(mappedBy = "professor")
-	 private Set<NastavnikZvanje> zvanja;
+	 private Set<ProfessorField> zvanja;
 	 
 	 private LocalDate dateOfBirth;
 	 private Character pol;
