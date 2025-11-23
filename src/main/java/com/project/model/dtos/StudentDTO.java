@@ -1,15 +1,13 @@
 package com.project.model.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Data@Getter@Setter@AllArgsConstructor
+@Data@Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class StudentDTO {
     private Long idIndex;
     private Long idStudent;
     private String firstName;
+    private String middleName;
     private String lastName;
     private int joinDate;
     private String studyProgram;

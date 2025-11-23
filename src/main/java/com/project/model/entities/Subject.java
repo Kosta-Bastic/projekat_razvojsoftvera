@@ -8,15 +8,23 @@ import lombok.ToString;
 @Data
 @ToString(exclude = {"studProgram"})
 public class Subject {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String password;
 	private String name;
 	private String description;
 	private Integer espb;
+
+	private String studyProgram;
+	private Integer semester;
+	private Integer lectureHours;
+	private Integer exerciseHours;
+	private Integer practicumHours;
+	private Integer lectureSessions;
+	private Integer exerciseSessions;
 	@ManyToOne
 	private StudyProgram studProgram;
 	private boolean mandatory;
@@ -38,7 +46,7 @@ public class Subject {
 			return false;
 		Subject other = (Subject) obj;
 		if (password == null) {
-            return other.password == null;
+			return other.password == null;
 		} else return password.equals(other.password);
-    }
+	}
 }

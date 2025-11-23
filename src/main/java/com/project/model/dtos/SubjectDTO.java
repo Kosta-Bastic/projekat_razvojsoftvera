@@ -1,20 +1,17 @@
 package com.project.model.dtos;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Data@Getter@Setter@AllArgsConstructor
+@Data@Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class SubjectDTO {
 
-    private Integer id;
+    private Long id;
     private String name;
     private String studyProgram;
     private Integer semester;
     private Integer lectureHours;
     private Integer exerciseHours;
     private Integer practicumHours;
-    private String mandatory;
+    private boolean mandatory;
     private Integer lectureSessions;
     private Integer exerciseSessions;
 }

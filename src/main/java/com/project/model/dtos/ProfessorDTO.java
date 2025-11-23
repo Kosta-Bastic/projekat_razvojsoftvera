@@ -1,17 +1,16 @@
 package com.project.model.dtos;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Data@Getter@Setter@AllArgsConstructor
-public class TeacherDTO {
+@Data@Getter@Setter@AllArgsConstructor@NoArgsConstructor
+public class ProfessorDTO {
 
-    private Integer id;
+    private Long id;
     private String email;
     private String firstName;
     private String lastName;
-    private String title;
+    private String middleName;
     private String phoneNumber;
-    private boolean admin;
+
+    //private String title;
+    //private boolean admin;
 }
