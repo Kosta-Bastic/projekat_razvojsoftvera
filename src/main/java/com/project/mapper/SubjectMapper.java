@@ -1,6 +1,7 @@
 package com.project.mapper;
 
 import com.project.model.dtos.SubjectDTO;
+import com.project.model.entities.StudyProgram;
 import com.project.model.entities.Subject;
 import org.springframework.stereotype.Component;
 
