@@ -2,9 +2,10 @@ package com.project.model.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
+@Data@Getter@Setter@AllArgsConstructor
 public class TeachesClassDTO {
 
     private int id;
