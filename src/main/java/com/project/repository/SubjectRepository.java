@@ -10,8 +10,8 @@ import java.util.List;
 @Repository
 public interface SubjectRepository extends CrudRepository<Subject, Long> {
 
-	List<Subject> getPredmetsByStudProgramAndObavezan(StudyProgram studProgram, boolean obavezan);
+	List<Subject> getSubjectsByStudProgramAndMandatory(StudyProgram studProgram, boolean mandatory);
 
 	List<Subject> findByIdIn(List<Long> ids);
-	List<Subject> findByNazivIn(List<String> nazivi);
+	List<Subject> findByNameIn(List<String> subjectNames);
 }

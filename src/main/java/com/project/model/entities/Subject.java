@@ -38,10 +38,7 @@ public class Subject {
 			return false;
 		Subject other = (Subject) obj;
 		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		return true;
-	}
+            return other.password == null;
+		} else return password.equals(other.password);
+    }
 }

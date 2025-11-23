@@ -1,13 +1,13 @@
 package com.project.model.entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Data
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"broj", "godina", "studProgramOznaka", "aktivan"}))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"number", "year", "studyProgramShort", "active"}))
 public class StudentIndex {
 
 	@Id
@@ -20,7 +20,7 @@ public class StudentIndex {
 	private boolean active;
 	private LocalDate validFrom;
 	@ManyToOne
-	private StudentPodaci student;
+	private StudentInfo student;
 	
 	@ManyToOne
 	private StudyProgram studyProgram;   // na koji studijski program je upisan

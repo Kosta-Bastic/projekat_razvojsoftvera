@@ -6,7 +6,7 @@ import lombok.Data;
 
 import java.util.List;
 
-@Data
+@Data@Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class StudentWebProfileDTO {
 
 	private StudentIndex activeIndex;

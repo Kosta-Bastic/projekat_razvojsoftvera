@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface StudyProgramRepository extends CrudRepository<StudyProgram, Long> {
 	
-	@Query("select distinct oznaka from StudyProgram ")
-    List<String> findAllOznaka();
+	@Query("select distinct mark from StudyProgram ")
+    List<String> findAllMarks();
 	
-	@Query("select sp from StudyProgram sp order by sp.godinaAkreditacije desc")
-	List<StudyProgram> getAllSortedByGodinaDesc();
+	@Query("select sp from StudyProgram sp order by sp.yearOfAccreditation desc")
+	List<StudyProgram> getAllSortedByYearDesc();
 }
