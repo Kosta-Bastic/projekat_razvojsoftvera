@@ -1,12 +1,13 @@
 package com.project.mapper;
 
 import com.project.model.dtos.SubjectDTO;
+import com.project.model.entities.StudyProgram;
 import com.project.model.entities.Subject;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SubjectMapper {
-    public SubjectDTO toSubjectDTO(Subject subject) {
+    public static SubjectDTO toSubjectDTO(Subject subject) {
         if (subject == null) return null;
 
         SubjectDTO subjectDTO = new SubjectDTO();
@@ -23,5 +24,28 @@ public class SubjectMapper {
         subjectDTO.setExerciseSessions(subject.getExerciseSessions());
 
         return subjectDTO;
+    }
+
+    public static Subject toSubject(SubjectDTO subjectDTO) {
+        if (subjectDTO == null) return null;
+
+        Subject subject = new Subject();
+
+        subject.setId(subjectDTO.getId());
+        subject.setName(subjectDTO.getName());
+        subject.setPassword(null);
+        subject.setDescription(null);
+        subject.setEspb(null);
+        subject.setStudProgram(new StudyProgram());
+        subject.getStudProgram().setName(subjectDTO.getStudyProgram());
+        subject.setSemester(subjectDTO.getSemester());
+        subject.setLectureHours(subjectDTO.getLectureHours());
+        subject.setExerciseHours(subjectDTO.getExerciseHours());
+        subject.setPracticumHours(subjectDTO.getPracticumHours());
+        subject.setMandatory(subjectDTO.isMandatory());
+        subject.setLectureSessions(subjectDTO.getLectureSessions());
+        subject.setExerciseSessions(subjectDTO.getExerciseSessions());
+
+        return subject;
     }
 }

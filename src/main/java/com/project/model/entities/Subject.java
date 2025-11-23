@@ -18,7 +18,6 @@ public class Subject {
 	private String description;
 	private Integer espb;
 
-	private String studyProgram;
 	private Integer semester;
 	private Integer lectureHours;
 	private Integer exerciseHours;
