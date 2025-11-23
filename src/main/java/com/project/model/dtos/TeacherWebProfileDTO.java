@@ -2,6 +2,10 @@ package com.project.model.dtos;
 
 import com.project.model.StudentIndex;
 import com.project.model.Subject;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +16,7 @@ import java.util.Map;
  *  - predmete koje nastavnik predaje u aktivnoj skolskoj godini 
  *  - spiskove studenata koji slusaju predmet
  */
-
+@Data@Getter@Setter@AllArgsConstructor
 public class TeacherWebProfileDTO {
 
 	private List<Subject> subjects;

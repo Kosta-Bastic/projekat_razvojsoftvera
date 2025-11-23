@@ -1,9 +1,8 @@
 package com.project.model;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
-
-import javax.persistence.*;
 
 @Entity
 @Data
@@ -19,7 +18,7 @@ public class Subject {
 	private String description;
 	private Integer espb;
 	@ManyToOne
-	private StudijskiProgram studProgram;
+	private StudyProgram studProgram;
 	private boolean mandatory;
 
 	@Override
@@ -39,10 +38,7 @@ public class Subject {
 			return false;
 		Subject other = (Subject) obj;
 		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		return true;
-	}
+            return other.password == null;
+		} else return password.equals(other.password);
+    }
 }

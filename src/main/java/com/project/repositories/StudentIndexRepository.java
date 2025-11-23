@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface StudentIndexRepository extends JpaRepository<StudentIndex, Long> {
 	
-	@Query("select si from StudentIndex si where si.student.id = :idStudentPodaci")
-	List<StudentIndex> findStudentIndeksiForStudentPodaciId(Long idStudentPodaci);
+	@Query("select si from StudentIndex si where si.student.id = :idStudentData")
+	List<StudentIndex> findStudentIndexForStudentDataId(Long idStudentData);
 
-	@Query("select si from StudentIndex si where si.student.id = :idStudentPodaci and si.aktivan = true")
-	StudentIndex findAktivanStudentIndeksiByStudentPodaciId(Long idStudentPodaci);
+	@Query("select si from StudentIndex si where si.student.id = :idStudentData and si.active = true")
+	StudentIndex findActiveStudentIndexesByStudentDataId(Long idStudentData);
 }

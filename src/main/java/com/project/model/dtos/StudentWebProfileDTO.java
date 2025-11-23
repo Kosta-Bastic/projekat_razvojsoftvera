@@ -2,11 +2,11 @@ package com.project.model.dtos;
 
 import com.project.model.AttendsClass;
 import com.project.model.StudentIndex;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
-@Data
+@Data@Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class StudentWebProfileDTO {
 
 	private StudentIndex activeIndex;

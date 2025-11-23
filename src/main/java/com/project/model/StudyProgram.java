@@ -1,9 +1,10 @@
 package com.project.model;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -12,16 +13,16 @@ public class StudyProgram {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String oznaka;  // RN, RM
-    private String naziv;
-    private Integer godinaAkreditacije;
-    private String zvanje;
-    private Integer trajanjeGodina;
-    private Integer trajanjeSemestara;
-    private String vrstaStudija; // OAS - osnovne akademske studje, OSS - osnovne strukovne, MAS - master akademske studije
-    private Integer ukupnoEspb;
+    private String mark;  // RN, RM
+    private String name;
+    private Integer yearOfAccreditation;
+    private String field;
+    private Integer durationOfYear;
+    private Integer durationOfSemester;
+    private String studyType; // OAS - osnovne akademske studje, OSS - osnovne strukovne, MAS - master akademske studije
+    private Integer espbInTotal;
 
     @JsonIgnore
     @OneToMany(mappedBy = "studProgram")
-    private List<Subject> predmeti;
+    private List<Subject> subjects;
 }
