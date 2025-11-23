@@ -1,5 +1,6 @@
 package com.project.service;
 
+import com.project.mapper.SubjectMapper;
 import com.project.model.dtos.SubjectDTO;
 import com.project.model.entities.Subject;
 import com.project.repository.StudyProgramRepository;
@@ -18,10 +19,18 @@ public class SubjectService {
     StudyProgramRepository studyProgramRepository;
     public List<SubjectDTO > getAllSubjectsOnStudyProgram(String mark) {
             List<SubjectDTO> subjects = new ArrayList<>();
-            List<Subject> allSubjects = studyProgramRepository.getSubjectsByMark(mark);
+            List<Subject> allSubjects = subjectRepository.getSubjectsByMark(mark);
             for (Subject subject : allSubjects) {
                 //subjects.add(SubjectMapper.toDTO(subject));
             }
             return subjects;
+    }
+    public List<SubjectDTO> getAllSubjects() {
+        List<Subject> subjects = subjectRepository.getSubjects();
+        List<SubjectDTO> subjectDTOs = new ArrayList<>();
+        for (Subject subject : subjects) {
+            subjectDTOs.add(SubjectMapper.toDTO(subject));
+        }
+        return subjectDTOs;
     }
 }

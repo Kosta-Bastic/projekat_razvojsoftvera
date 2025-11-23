@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PaymentMapper {
-    public PaymentDTO toPaymentDTO(Payment payment) {
+    public static PaymentDTO toDTO(Payment payment) {
         if (payment == null) return null;
 
         PaymentDTO paymentDTO = new PaymentDTO();
@@ -18,7 +18,7 @@ public class PaymentMapper {
 
         return paymentDTO;
     }
-    public Payment toPaymentEntity(PaymentDTO paymentDTO) {
+    public static Payment toEntity(PaymentDTO paymentDTO) {
         if (paymentDTO == null) return null;
 
         Payment payment = new Payment();

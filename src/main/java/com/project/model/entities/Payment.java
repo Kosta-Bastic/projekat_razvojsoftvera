@@ -15,7 +15,6 @@ public class Payment {
     private Long id;
 
     private LocalDate paymentDate;
-    private Double amountEUR;
     private Double amountRSD;
     private Double exchangeRate;
 

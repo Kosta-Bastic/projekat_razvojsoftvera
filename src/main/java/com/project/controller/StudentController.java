@@ -1,15 +1,20 @@
 package com.project.controller;
 
+import com.project.model.dtos.StudentDTO;
 import com.project.model.dtos.StudentWebProfileDTO;
 import com.project.model.entities.StudentIndex;
 import com.project.model.entities.StudentInfo;
 import com.project.model.dtos.StudentProfileDTO;
 import com.project.repository.StudentIndexRepository;
 import com.project.repository.StudyProgramRepository;
+import com.project.service.StudentInfoService;
 import com.project.service.StudentProfileService;
 import com.project.utils.ParseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @CrossOrigin@RestController@RequestMapping(path="/student")
 public class StudentController {
@@ -18,6 +23,8 @@ public class StudentController {
     StudyProgramRepository studyProgramRepository;
     @Autowired
     StudentProfileService studentProfileService;
+    @Autowired
+    private StudentInfoService studentInfoService;
 
     @PostMapping(path="/add")
     public Long addNewStudentInfo(@RequestBody StudentInfo studentInfo){
@@ -38,5 +45,9 @@ public class StudentController {
             return studentProfileService.getStudentWebProfileByEmail(parsedEmail);
         }
         return null;
+    }
+    @PostMapping(path="/highschool/{highschool}")
+    public List<StudentDTO> getStudentProfileByHighSchool(@PathVariable String highschool){
+        return studentInfoService.getByHighschool(highschool);
     }
 }

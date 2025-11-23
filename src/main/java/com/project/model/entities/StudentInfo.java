@@ -32,4 +32,5 @@ public class StudentInfo {
     private String IDCardProvider;
     private String placeOfLiving;
     private String addressOfLiving;
+    private String highSchool;
 }

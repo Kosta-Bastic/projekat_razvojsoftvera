@@ -13,4 +13,5 @@ public class StudentDTO {
     private String studyProgram;
     private int number;
     private boolean activeIndex;
+    private String highSchool;
 }

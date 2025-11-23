@@ -19,4 +19,7 @@ public interface StudentInfoRepository extends JpaRepository<StudentInfo, Long> 
 
 	@Query("select si from StudentInfo si where (si.firstName=:firstName or :firstName=NULL ) and (si.lastName=:lastName or :firstName=NULL) order by si.firstName,si.lastName desc")
 	List<StudentInfo> findByName(String firstName, String lastName);
+
+	@Query("select si from StudentInfo si where si.highSchool=:highschool")
+	List<StudentInfo> findByHighSchool(String highschool);
 }
