@@ -7,6 +7,7 @@ import com.project.repository.AttendsClassRepository;
 import com.project.repository.StudentIndexRepository;
 import com.project.repository.StudentInfoRepository;
 import com.project.repository.SubjectRepository;
+import com.project.utils.ParseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +37,9 @@ public class StudentProfileService {
         ret.setActiveIndex(studentInfoRepository.getActiveIndex(studInfoId));
         ret.setAttendsClasses(attendsClassRepository.findAttendsClassForIndexActive(indexId));
         return ret;
+    }
+    public StudentWebProfileDTO getStudentWebProfileByEmail(String[] email) {
+        StudentIndex si = studentIndexRepository.findStudentIndexByIndexData(email[3],Integer.parseInt(email[0]), Integer.parseInt(email[2]));
+        return getStudentWebProfile(si.getId());
     }
 }
