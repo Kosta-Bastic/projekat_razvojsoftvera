@@ -2,7 +2,6 @@ package com.project.utils;
 
 import org.springframework.web.client.RestTemplate;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
 public class CurrencyUtils {
