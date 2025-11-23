@@ -1,18 +1,12 @@
 package com.project.mapper;
 
 import com.project.model.dtos.ProfessorDTO;
-import com.project.model.dtos.ProfessorWebProfileDTO;
 import com.project.model.entities.Professor;
-import com.project.model.entities.StudentIndex;
-import com.project.model.entities.Subject;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Map;
 
 @Component
 public class ProfessorMapper {
-    public static ProfessorDTO toProfessorDTO(Professor professor) {
+    public static ProfessorDTO toDTO(Professor professor) {
         ProfessorDTO professorDTO = new ProfessorDTO();
 
         professorDTO.setId(professor.getId());
@@ -25,7 +19,7 @@ public class ProfessorMapper {
         return professorDTO;
     }
 
-    public static Professor toProfessorEntity(ProfessorDTO professorDTO) {
+    public static Professor toEntity(ProfessorDTO professorDTO) {
         Professor professor = new Professor();
 
         professor.setId(professorDTO.getId());

@@ -13,8 +13,16 @@ import java.util.List;
 public class SubjectController {
     @Autowired
     SubjectService subjectService;
-    @PostMapping(path="{mark}")
+    @PostMapping(path="/{mark}")
     public List<SubjectDTO> getSubjectsByMark(@PathVariable String mark) {
         return subjectService.getAllSubjectsOnStudyProgram(mark);
+    }
+    @PostMapping(path="/all")
+    public List<SubjectDTO> getAllSubjects() {
+        return subjectService.getAllSubjects();
+    }
+    @PostMapping(path="/avg from {startDate} to {endDate}")
+    public double getAvgFromTo(@PathVariable int startDate,@PathVariable int endDate){
+        return 0;
     }
 }

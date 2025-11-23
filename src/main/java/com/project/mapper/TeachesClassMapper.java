@@ -6,29 +6,29 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TeachesClassMapper {
-    public static TeachesClassDTO toTeachesClassDTO(TeachesClass teachesClass) {
+
+
+    public static TeachesClassDTO toDTO(TeachesClass teachesClass) {
         if (teachesClass == null) return null;
 
         TeachesClassDTO teachesClassDTO = new TeachesClassDTO();
         teachesClassDTO.setId(teachesClass.getId());
-        teachesClassDTO.setTeacher(ProfessorMapper.toProfessorDTO(teachesClass.getProfessor()));
-        teachesClassDTO.setSubject(SubjectMapper.toSubjectDTO(teachesClass.getSubject()));
+        teachesClassDTO.setTeacher(ProfessorMapper.toDTO(teachesClass.getProfessor()));
+        teachesClassDTO.setSubject(SubjectMapper.toDTO(teachesClass.getSubject()));
         //teachesClassDTO.setClassType(null);
         //teachesClassDTO.setSessionCount(null);
 
         return teachesClassDTO;
     }
 
-    public static TeachesClass toTeachesClass(TeachesClassDTO teachesClassDTO) {
+    public static TeachesClass toEntity(TeachesClassDTO teachesClassDTO) {
         if (teachesClassDTO == null) return null;
 
-        TeachesClass tc = new TeachesClass();
-        tc.setId(teachesClassDTO.getId());
-        tc.setProfessor(ProfessorMapper.toProfessorEntity(teachesClassDTO.getTeacher()));
-        tc.setSubject(SubjectMapper.toSubject(teachesClassDTO.getSubject()));
-        //teachesClassDTO.setClassType(null);
-        //teachesClassDTO.setSessionCount(null);
+        TeachesClass teachesClass = new TeachesClass();
+        teachesClass.setId(teachesClassDTO.getId());
+        teachesClass.setProfessor(ProfessorMapper.toEntity(teachesClassDTO.getTeacher()));
+        teachesClass.setSubject(SubjectMapper.toEntity(teachesClassDTO.getSubject()));
 
-        return tc;
+        return teachesClass;
     }
 }

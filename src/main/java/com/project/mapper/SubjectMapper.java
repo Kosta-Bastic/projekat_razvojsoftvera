@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SubjectMapper {
-    public static SubjectDTO toSubjectDTO(Subject subject) {
+    public static SubjectDTO toDTO(Subject subject) {
         if (subject == null) return null;
 
         SubjectDTO subjectDTO = new SubjectDTO();
@@ -25,19 +25,14 @@ public class SubjectMapper {
 
         return subjectDTO;
     }
-
-    public static Subject toSubject(SubjectDTO subjectDTO) {
+    public static Subject toEntity(SubjectDTO subjectDTO) {
         if (subjectDTO == null) return null;
 
         Subject subject = new Subject();
 
         subject.setId(subjectDTO.getId());
         subject.setName(subjectDTO.getName());
-        subject.setPassword(null);
-        subject.setDescription(null);
-        subject.setEspb(null);
-        subject.setStudProgram(new StudyProgram());
-        subject.getStudProgram().setName(subjectDTO.getStudyProgram());
+        subject.setStudyProgram(subjectDTO.getStudyProgram());
         subject.setSemester(subjectDTO.getSemester());
         subject.setLectureHours(subjectDTO.getLectureHours());
         subject.setExerciseHours(subjectDTO.getExerciseHours());

@@ -25,4 +25,5 @@ public class StudentDTO {
     private String email;
     private String placeOfLiving;
     private String addressOfLiving;
+    private String highSchool;
 }

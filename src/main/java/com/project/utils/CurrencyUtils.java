@@ -1,18 +1,15 @@
-package com.project.service;
+package com.project.utils;
 
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
-@Service
-public class CurrencyService {
-    private final RestTemplate restTemplate = new RestTemplate();
-    public BigDecimal getCourse(){
+public class CurrencyUtils {
+    private static final RestTemplate restTemplate = new RestTemplate();
+    public static double getCourse(){
         String url = "https://kurs.resenje.org/api/v1/currencies/eur/rates/today";
         Map<String, Object> response = restTemplate.getForObject(url, Map.class);
         Map<String, Object> data = (Map<String, Object>) response.get("data");
-        return new BigDecimal(data.get("rate").toString());
+        return Double.parseDouble(data.get("rate").toString());
     }
 }

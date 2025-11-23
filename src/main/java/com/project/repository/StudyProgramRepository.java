@@ -18,6 +18,5 @@ public interface StudyProgramRepository extends CrudRepository<StudyProgram, Lon
 	@Query("select sp from StudyProgram sp order by sp.yearOfAccreditation desc")
 	List<StudyProgram> getAllSortedByYearDesc();
 
-	@Query("select sj from Subject sj where sj.studProgram=:mark")
-	List<Subject> getSubjectsByMark(String mark);
+
 }
