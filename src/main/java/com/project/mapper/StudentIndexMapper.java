@@ -1,29 +1,42 @@
 package com.project.mapper;
 
 import com.project.model.dtos.StudentDTO;
+import com.project.model.dtos.StudentIndexDTO;
 import com.project.model.entities.StudentIndex;
 import com.project.model.entities.StudentInfo;
 import org.springframework.stereotype.Component;
 
 @Component
 public class StudentIndexMapper {
-    public StudentDTO toStudentDTO(StudentIndex si){
+    public static StudentIndexDTO toStudentIndexDTO(StudentIndex si){
         if(si ==null)return null;
 
-        StudentDTO studentDTO = new StudentDTO();
-        studentDTO.setIdIndex(si.getId());
-        studentDTO.setJoinDate(si.getYear());
-        studentDTO.setStudyProgram(si.getStudyProgramShort());
-        studentDTO.setNumber(si.getNumber());
-        studentDTO.setActiveIndex(si.isActive());
+        StudentIndexDTO studentIndexDTO = new StudentIndexDTO();
+        studentIndexDTO.setIdIndex(si.getId());
+        studentIndexDTO.setStudentId(si.getStudent().getId());
+        studentIndexDTO.setJoinDate(si.getValidFrom());
+        studentIndexDTO.setYear(si.getValidFrom().getYear());
+        studentIndexDTO.setStudyProgram(si.getStudyProgramShort());
+        studentIndexDTO.setActiveIndex(si.isActive());
 
-        if (si.getStudent() != null) {
-            studentDTO.setIdStudent(si.getStudent().getId());
-            studentDTO.setFirstName(si.getStudent().getFirstName());
-            studentDTO.setLastName(si.getStudent().getLastName());
-            studentDTO.setMiddleName(si.getStudent().getMiddleName());
-        }
+        return studentIndexDTO;
+    }
 
-        return studentDTO;
+    public static StudentIndex toStudentIndexDTO(StudentIndexDTO studentIndexDTO){
+        if(studentIndexDTO ==null)return null;
+
+        StudentIndex si = new StudentIndex();
+        si.setId(studentIndexDTO.getStudentId());
+        si.setNumber(studentIndexDTO.getNumber());
+        si.setYear(studentIndexDTO.getYear());
+        si.setWayOfFinancing(null);
+        si.setActive(studentIndexDTO.isActiveIndex());
+        si.setValidFrom(studentIndexDTO.getJoinDate());
+        si.setStudent(new StudentInfo());
+        si.getStudent().setId(studentIndexDTO.getStudentId());
+        si.setStudyProgramShort(studentIndexDTO.getStudyProgram());
+        si.setAchievedESPB(null);
+
+        return si;
     }
 }

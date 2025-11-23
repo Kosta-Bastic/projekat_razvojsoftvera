@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Component
 public class ProfessorMapper {
-    public ProfessorDTO toProfessorDTO(Professor professor) {
+    public static ProfessorDTO toProfessorDTO(Professor professor) {
         ProfessorDTO professorDTO = new ProfessorDTO();
 
         professorDTO.setId(professor.getId());
@@ -25,7 +25,7 @@ public class ProfessorMapper {
         return professorDTO;
     }
 
-    public Professor toProfessorEntity(ProfessorDTO professorDTO) {
+    public static Professor toProfessorEntity(ProfessorDTO professorDTO) {
         Professor professor = new Professor();
 
         professor.setId(professorDTO.getId());
