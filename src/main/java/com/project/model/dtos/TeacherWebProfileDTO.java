@@ -1,7 +1,7 @@
 package com.project.model.dtos;
 
-import com.project.model.StudentIndex;
-import com.project.model.Subject;
+import com.project.model.entities.StudentIndex;
+import com.project.model.entities.Subject;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;

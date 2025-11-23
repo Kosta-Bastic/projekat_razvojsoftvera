@@ -1,8 +1,8 @@
 package com.project.model.dtos;
 
-import com.project.model.AttendsClass;
-import com.project.model.StudentIndex;
-import com.project.model.Subject;
+import com.project.model.entities.AttendsClass;
+import com.project.model.entities.StudentIndex;
+import com.project.model.entities.Subject;
 import lombok.*;
 
 import java.util.List;

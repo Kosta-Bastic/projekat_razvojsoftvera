@@ -1,7 +1,7 @@
-package com.project.repositories;
+package com.project.repository;
 
-import com.project.model.StudentIndex;
-import com.project.model.StudentInfo;
+import com.project.model.entities.StudentIndex;
+import com.project.model.entities.StudentInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

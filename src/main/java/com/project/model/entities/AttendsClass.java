@@ -1,19 +1,19 @@
-package com.project.model;
+package com.project.model.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
-public class TeachesClass {
+public class AttendsClass {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@ManyToOne	
+	private StudentIndex studentIndex;
 	
 	@ManyToOne
-	private Professor professor;
-	
-	@ManyToOne
-	private Subject subject;
+	private TeachesClass teachesClass;
+
 }

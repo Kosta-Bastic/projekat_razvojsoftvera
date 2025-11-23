@@ -1,9 +1,9 @@
-package com.project.controllers;
+package com.project.controller;
 
-import com.project.model.StudentInfo;
+import com.project.model.entities.StudentInfo;
 import com.project.model.dtos.StudentProfileDTO;
-import com.project.repositories.StudyProgramRepository;
-import com.project.services.StudentProfileService;
+import com.project.repository.StudyProgramRepository;
+import com.project.service.StudentProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

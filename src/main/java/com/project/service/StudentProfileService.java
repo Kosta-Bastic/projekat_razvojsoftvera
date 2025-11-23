@@ -1,12 +1,12 @@
-package com.project.services;
+package com.project.service;
 
-import com.project.model.StudentIndex;
 import com.project.model.dtos.StudentProfileDTO;
 import com.project.model.dtos.StudentWebProfileDTO;
-import com.project.repositories.AttendsClassRepository;
-import com.project.repositories.StudentIndexRepository;
-import com.project.repositories.StudentInfoRepository;
-import com.project.repositories.SubjectRepository;
+import com.project.model.entities.StudentIndex;
+import com.project.repository.AttendsClassRepository;
+import com.project.repository.StudentIndexRepository;
+import com.project.repository.StudentInfoRepository;
+import com.project.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

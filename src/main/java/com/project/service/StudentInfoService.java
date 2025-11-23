@@ -1,6 +1,6 @@
-package com.project.services;
+package com.project.service;
 
-import com.project.repositories.StudentInfoRepository;
+import com.project.repository.StudentInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
