@@ -24,7 +24,7 @@ import java.util.List;
 @Data@Getter
 @Setter@AllArgsConstructor@NoArgsConstructor
 public class StudentProfileDTO {
-
+    private Long id;
 	private StudentIndex index;
 	private List<AttendsClass> attendsClasses;
 	private List<Subject> remainingClasses;

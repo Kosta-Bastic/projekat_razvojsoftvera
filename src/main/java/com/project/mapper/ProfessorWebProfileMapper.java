@@ -9,12 +9,23 @@ import java.util.stream.Collectors;
 
 @Component
 public class ProfessorWebProfileMapper {
-    public ProfessorWebProfileDTO professorWebToDTO(ProfessorWebProfile entity) {
+    public static ProfessorWebProfileDTO toProfessorWebDTO(ProfessorWebProfile entity) {
+        if (entity == null) {return null;}
 
         ProfessorWebProfileDTO professorWebProfileDTO = new ProfessorWebProfileDTO();
         professorWebProfileDTO.setId(entity.getId());
         professorWebProfileDTO.setSubjects(entity.getSubjects());
-        professorWebProfileDTO.setAttendClasses(new HashMap<>(entity.getProfessorWebProfileConnector().get));
-        return dto;
+        professorWebProfileDTO.setAttendClasses(entity.getProfessorWebProfileConnector());
+        return professorWebProfileDTO;
+    }
+
+    public static ProfessorWebProfile toProfessorWeb(ProfessorWebProfileDTO entity) {
+        if (entity == null) {return null;}
+
+        ProfessorWebProfile pwp = new ProfessorWebProfile();
+        pwp.setId(entity.getId());
+        pwp.setSubjects(entity.getSubjects());
+        pwp.setProfessorWebProfileConnector(entity.getAttendClasses());
+        return pwp;
     }
 }

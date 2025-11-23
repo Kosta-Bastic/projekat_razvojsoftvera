@@ -1,11 +1,11 @@
 package com.project.model.dtos;
 
+import com.project.model.entities.ProfessorWebProfileConnector;
 import com.project.model.entities.StudentIndex;
 import com.project.model.entities.Subject;
 import lombok.*;
 
 import java.util.List;
-import java.util.Map;
 
 /*
  * entitet koji se vraca kada se nastavnik uloguje na veb servis
@@ -15,8 +15,8 @@ import java.util.Map;
  */
 @Data@Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class ProfessorWebProfileDTO {
-
+    private Long id;
 	private List<Subject> subjects;
-	private Map<Subject,List<StudentIndex>> attendClasses;
+	private List<ProfessorWebProfileConnector> attendClasses;
 
 }
