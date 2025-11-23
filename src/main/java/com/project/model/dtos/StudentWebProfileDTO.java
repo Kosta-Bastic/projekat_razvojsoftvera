@@ -2,7 +2,7 @@ package com.project.model.dtos;
 
 import com.project.model.entities.AttendsClass;
 import com.project.model.entities.StudentIndex;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 

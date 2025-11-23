@@ -11,8 +11,11 @@ import java.util.List;
 public interface StudentIndexRepository extends JpaRepository<StudentIndex, Long> {
 	
 	@Query("select si from StudentIndex si where si.student.id = :idStudentData")
-	List<StudentIndex> findStudentIndexForStudentDataId(Long idStudentData);
+	List<StudentIndex> findStudentIndexesForStudentDataId(Long idStudentData);
 
 	@Query("select si from StudentIndex si where si.student.id = :idStudentData and si.active = true")
-	StudentIndex findActiveStudentIndexesByStudentDataId(Long idStudentData);
+	StudentIndex findActiveStudentIndexByStudentDataId(Long idStudentData);
+
+	@Query("select si from StudentIndex si where si.number=:number and si.year=:year and si.studyProgramShort like :mark")
+	StudentIndex findStudentIndexByIndexData(String mark,int number, int year);
 }
