@@ -10,6 +10,6 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
     @Query("select payment from Payment payment where payment.studentIndex=:studentIndex")
     Payment getPayment(int studentIndex);
 
-    @Query("select 3000-(sum(payment.amountRSD)/payment.exchangeRate) from Payment payment where payment.studentIndex.id=:studentIndexID")
+    @Query("select 3000-(sum(payment.amountRSD/payment.exchangeRate)) from Payment payment where payment.studentIndex.id=:studentIndexID")
     Double getRemaining(Long studentIndexID);
 }

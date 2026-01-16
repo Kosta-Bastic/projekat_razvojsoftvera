@@ -13,7 +13,7 @@ import java.util.List;
 
 @Component
 public class StudentInfoMapper {
-    public static StudentDTO toStudentDTO(StudentInfo si){
+    public static StudentDTO toDTO(StudentInfo si){
         if(si ==null)return null;
 
         StudentDTO studentDTO = new StudentDTO();
@@ -38,7 +38,7 @@ public class StudentInfoMapper {
         return studentDTO;
     }
 
-    public static StudentInfo toStudentInfo(StudentDTO studentDTO) {
+    public static StudentInfo toEntity(StudentDTO studentDTO) {
         if(studentDTO ==null)return null;
 
         StudentInfo studentInfo = new StudentInfo();

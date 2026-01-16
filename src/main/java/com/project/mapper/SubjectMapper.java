@@ -32,7 +32,8 @@ public class SubjectMapper {
 
         subject.setId(subjectDTO.getId());
         subject.setName(subjectDTO.getName());
-        subject.setStudyProgram(subjectDTO.getStudyProgram());
+        subject.setStudProgram(new StudyProgram());
+        subject.getStudProgram().setName(subjectDTO.getStudyProgram());
         subject.setSemester(subjectDTO.getSemester());
         subject.setLectureHours(subjectDTO.getLectureHours());
         subject.setExerciseHours(subjectDTO.getExerciseHours());

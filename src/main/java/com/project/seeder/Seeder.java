@@ -25,7 +25,7 @@ public class Seeder implements CommandLineRunner {
     @Autowired
     private AttendsClassRepository attendsClassRepository;
     @Autowired
-    private GroupRepository groupRepository;
+    private EnrollingYearRepository enrollingYearRepository;
 
     @Override
     public void run(String... args) throws Exception {

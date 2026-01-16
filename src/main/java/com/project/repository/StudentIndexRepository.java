@@ -16,6 +16,6 @@ public interface StudentIndexRepository extends JpaRepository<StudentIndex, Long
 	@Query("select si from StudentIndex si where si.student.id = :idStudentData and si.active = true")
 	StudentIndex findActiveStudentIndexByStudentDataId(Long idStudentData);
 
-	@Query("select si from StudentIndex si where si.number=:number and si.year=:year and si.studyProgramShort like :mark")
+	@Query("select si from StudentIndex si where si.number=:number and si.year=:year and lower(si.studyProgramShort) like :mark")
 	StudentIndex findStudentIndexByIndexData(String mark,int number, int year);
 }

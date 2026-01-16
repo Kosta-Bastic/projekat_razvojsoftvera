@@ -1,16 +1,17 @@
 package com.project.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
-@Data
+@Data@Setter@Getter@AllArgsConstructor@NoArgsConstructor
 public class AttendsClass {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	@ManyToOne	
+	@ManyToOne
 	private StudentIndex studentIndex;
 	
 	@ManyToOne

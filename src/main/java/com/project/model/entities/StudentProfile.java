@@ -1,5 +1,6 @@
 package com.project.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,9 @@ public class StudentProfile {
     @OneToMany
     private List<AttendsClass> attendsClasses;
 
-    @ManyToMany
+    @ManyToMany@JsonIgnore
     private List<Subject> remainingClasses;
+
+    @ManyToMany@JsonIgnore
+    private List<Subject> passedClasses;
 }

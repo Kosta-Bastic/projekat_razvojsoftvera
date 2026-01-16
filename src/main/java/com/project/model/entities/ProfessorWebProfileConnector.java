@@ -1,5 +1,6 @@
 package com.project.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,6 +19,6 @@ public class ProfessorWebProfileConnector {
     @ManyToOne(cascade = CascadeType.ALL)
     private Subject subject;
 
-    @ManyToMany
+    @ManyToMany@JsonIgnore
     private List<StudentIndex> studentIndex;
 }

@@ -22,8 +22,4 @@ public class StudyProgram {
     private Integer durationOfSemester;
     private String studyType; // OAS - osnovne akademske studje, OSS - osnovne strukovne, MAS - master akademske studije
     private Integer espbInTotal;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "studProgram")
-    private List<Subject> subjects;
 }

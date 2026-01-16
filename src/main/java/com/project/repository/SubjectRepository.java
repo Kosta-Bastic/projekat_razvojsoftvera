@@ -16,7 +16,7 @@ public interface SubjectRepository extends CrudRepository<Subject, Long> {
 	List<Subject> findByIdIn(List<Long> ids);
 	List<Subject> findByNameIn(List<String> subjectNames);
 
-	@Query("select sj from Subject sj where sj.studProgram=:mark")
+	@Query("select sj from Subject sj where lower(sj.studProgram.mark) like lower(:mark)")
 	List<Subject> getSubjectsByMark(String mark);
 
 	@Query("select distinct sj from Subject sj")

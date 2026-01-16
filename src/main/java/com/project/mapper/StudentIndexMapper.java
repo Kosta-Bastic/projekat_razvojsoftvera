@@ -1,6 +1,5 @@
 package com.project.mapper;
 
-import com.project.model.dtos.StudentDTO;
 import com.project.model.dtos.StudentIndexDTO;
 import com.project.model.entities.StudentIndex;
 import com.project.model.entities.StudentInfo;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StudentIndexMapper {
-    public static StudentIndexDTO toStudentIndexDTO(StudentIndex si){
+    public static StudentIndexDTO toDTO(StudentIndex si){
         if(si ==null)return null;
 
         StudentIndexDTO studentIndexDTO = new StudentIndexDTO();
@@ -22,7 +21,7 @@ public class StudentIndexMapper {
         return studentIndexDTO;
     }
 
-    public static StudentIndex toStudentIndexDTO(StudentIndexDTO studentIndexDTO){
+    public static StudentIndex toEntity(StudentIndexDTO studentIndexDTO){
         if(studentIndexDTO ==null)return null;
 
         StudentIndex si = new StudentIndex();

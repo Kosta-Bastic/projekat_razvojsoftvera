@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StudentWebProfileMapper {
-    public static StudentWebProfileDTO toStudentWebProfileDTO(StudentWebProfile studentWebProfile) {
+    public static StudentWebProfileDTO toDTO(StudentWebProfile studentWebProfile) {
         if (studentWebProfile == null) {return null;}
 
         StudentWebProfileDTO studentWebProfileDTO = new StudentWebProfileDTO();
@@ -16,7 +16,7 @@ public class StudentWebProfileMapper {
         return studentWebProfileDTO;
     }
 
-    public static StudentWebProfile toStudentWebProfile(StudentWebProfileDTO studentWebProfileDTO) {
+    public static StudentWebProfile toEntity(StudentWebProfileDTO studentWebProfileDTO) {
         if (studentWebProfileDTO == null) {return null;}
 
         StudentWebProfile studentWebProfile = new StudentWebProfile();

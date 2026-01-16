@@ -1,5 +1,7 @@
 package com.project.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.model.dtos.StudentIndexDTO;
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,9 +19,9 @@ public class ProfessorWebProfile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany
+    @ManyToMany@JsonIgnore
     private List<Subject> subjects;
 
-    @OneToMany(mappedBy = "professorWebProfile", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ProfessorWebProfileConnector>  professorWebProfileConnector;
 }

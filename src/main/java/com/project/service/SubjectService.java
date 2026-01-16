@@ -21,7 +21,7 @@ public class SubjectService {
             List<SubjectDTO> subjects = new ArrayList<>();
             List<Subject> allSubjects = subjectRepository.getSubjectsByMark(mark);
             for (Subject subject : allSubjects) {
-                //subjects.add(SubjectMapper.toDTO(subject));
+                subjects.add(SubjectMapper.toDTO(subject));
             }
             return subjects;
     }

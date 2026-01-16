@@ -28,4 +28,5 @@ public class StudentProfileDTO {
 	private StudentIndex index;
 	private List<AttendsClass> attendsClasses;
 	private List<Subject> remainingClasses;
+	private List<Subject> passedClasses;
 }

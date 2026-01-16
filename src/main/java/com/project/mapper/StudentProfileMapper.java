@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StudentProfileMapper {
-    private static StudentProfileDTO studentProfileDTO(StudentProfile studentProfile){
+    private static StudentProfileDTO toDTO(StudentProfile studentProfile){
         if(studentProfile == null){return null;}
 
         StudentProfileDTO studentProfileDTO = new StudentProfileDTO();
@@ -14,10 +14,11 @@ public class StudentProfileMapper {
         studentProfileDTO.setIndex(studentProfile.getIndex());
         studentProfileDTO.setAttendsClasses(studentProfile.getAttendsClasses());
         studentProfileDTO.setRemainingClasses(studentProfile.getRemainingClasses());
+        studentProfileDTO.setPassedClasses(studentProfile.getPassedClasses());
         return studentProfileDTO;
     }
 
-    private static StudentProfile studentProfile(StudentProfileDTO studentProfileDTO){
+    private static StudentProfile toEntity(StudentProfileDTO studentProfileDTO){
         if(studentProfileDTO == null){return null;}
 
         StudentProfile studentProfile = new StudentProfile();
@@ -25,6 +26,7 @@ public class StudentProfileMapper {
         studentProfile.setIndex(studentProfileDTO.getIndex());
         studentProfile.setAttendsClasses(studentProfileDTO.getAttendsClasses());
         studentProfile.setRemainingClasses(studentProfileDTO.getRemainingClasses());
+        studentProfile.setPassedClasses(studentProfileDTO.getPassedClasses());
         return studentProfile;
     }
 

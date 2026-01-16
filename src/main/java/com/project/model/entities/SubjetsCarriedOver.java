@@ -2,21 +2,21 @@ package com.project.model.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.List;
 
 @Entity
 @Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentWebProfile {
-
+public class SubjetsCarriedOver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    private StudentIndex activeIndex;
+    @ManyToOne
+    private EnrollingYear enrollingYear;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<AttendsClass> attendsClasses;
+    @ManyToOne
+    private Subject subject;
 }

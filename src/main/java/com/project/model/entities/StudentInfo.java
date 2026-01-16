@@ -2,12 +2,15 @@ package com.project.model.entities;
 
 import jakarta.persistence.*;
 
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
-@Data
+@Data@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudentInfo {
 
     @Id
@@ -32,5 +35,6 @@ public class StudentInfo {
     private String IDCardProvider;
     private String placeOfLiving;
     private String addressOfLiving;
-    private String highSchool;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private HighSchool highSchool;
 }

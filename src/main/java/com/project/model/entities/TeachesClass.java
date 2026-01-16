@@ -16,4 +16,7 @@ public class TeachesClass {
 	
 	@ManyToOne
 	private Subject subject;
+
+	@ManyToOne
+	private SchoolYear schoolYear;
 }

@@ -1,20 +1,20 @@
 package com.project.controller;
 
-import com.project.model.dtos.PaymentDTO;
-import com.project.model.dtos.StudentDTO;
-import com.project.model.dtos.StudentWebProfileDTO;
+import com.project.model.dtos.*;
 import com.project.model.entities.StudentIndex;
 import com.project.model.entities.StudentInfo;
-import com.project.model.dtos.StudentProfileDTO;
 import com.project.repository.StudentIndexRepository;
 import com.project.repository.StudyProgramRepository;
+import com.project.service.EnrollingYearService;
 import com.project.service.PaymentService;
 import com.project.service.StudentInfoService;
 import com.project.service.StudentProfileService;
 import com.project.utils.CurrencyUtils;
 import com.project.utils.ParseUtils;
+import org.hibernate.engine.jdbc.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -31,6 +31,8 @@ public class StudentController {
     private StudentInfoService studentInfoService;
     @Autowired
     private PaymentService paymentService;
+    @Autowired
+    private EnrollingYearService enrollingYearService;
 
     @PostMapping(path="/add")
     public Long addNewStudentInfo(@RequestBody StudentInfo studentInfo){
@@ -65,7 +67,11 @@ public class StudentController {
         return paymentService.clearDebt(studentIndexID, CurrencyUtils.getCourse());
     }
     @PostMapping(path="{firstName} {lastName}")
-    public Page<StudentDTO> getStudentInfoFromCredentials(@PathVariable String firstName, @PathVariable String lastName){
-        return studentInfoService.getByCredentials(firstName,lastName);
+    public Page<StudentDTO> getStudentInfoFromCredentials(@PathVariable String firstName, @PathVariable String lastName, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size){
+        return studentInfoService.getByCredentials(firstName,lastName,page,size);
+    }
+    @PostMapping(path="{studentIndexID}/retriedyears")
+    public List<EnrollingYearDTO> getRetriedYears(@PathVariable Long studentIndexID){
+        return enrollingYearService.getRetriedYears(studentIndexID);
     }
 }
