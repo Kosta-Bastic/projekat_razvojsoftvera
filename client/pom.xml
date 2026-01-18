@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.project</groupId>
+        <artifactId>projekat_razvojsoftvera</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>client</artifactId>
+    <packaging>pom</packaging>
+    <name>client</name>
+    <description>Client Application Module</description>
+
+    <!-- 
+    This is a placeholder module for the client application.
+    When you add your client code, you can configure the build process here.
+    
+    For example, if using a Node.js/React/Angular/Vue app, you might use:
+    - frontend-maven-plugin to run npm/yarn commands
+    - maven-resources-plugin to copy build output
+    -->
+
+    <build>
+        <plugins>
+            <!-- Add frontend build plugins here when client code is added -->
+        </plugins>
+    </build>
+</project>

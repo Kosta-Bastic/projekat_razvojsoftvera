@@ -4,21 +4,21 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.project</groupId>
-  <artifactId>shared-dtos</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <parent>
+    <groupId>com.project</groupId>
+    <artifactId>projekat_razvojsoftvera</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
 
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-  </properties>
+  <artifactId>shared-dtos</artifactId>
+  <packaging>jar</packaging>
+  <name>shared-dtos</name>
+  <description>Shared Data Transfer Objects</description>
 
   <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.26</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
